@@ -1,0 +1,10 @@
+  auto supplyVoltages
+    = d.getOneDRegisterAccessor<int>("heater/supplyVoltages");
+
+  supplyVoltages.read();
+
+  std::cout << "Supply voltages are ";
+  for (auto voltage : supplyVoltages){
+    std::cout << voltage << " ";
+  }
+  std::cout << std::endl;
