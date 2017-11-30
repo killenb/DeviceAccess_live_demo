@@ -1,0 +1,37 @@
+#include <mtca4u/Device.h>
+#include <mtca4u/Utilities.h>
+#include <iostream>
+
+int main(){
+
+  mtca4u::setDMapFilePath("devices.dmap");
+  mtca4u::Device d;
+  d.open("heater");
+ 
+  auto heatingCurrent
+    = d.getScalarRegisterAccessor<int>("heater/heatingCurrent");
+
+  heatingCurrent.read();  
+  std::cout << "Heating current is " << heatingCurrent << std::endl;
+
+  heatingCurrent += 3;
+  heatingCurrent.write();
+
+  auto supplyVoltages
+    = d.getOneDRegisterAccessor<int>("heater/supplyVoltages");
+
+  supplyVoltages.read();
+
+  std::cout << "Supply voltages are ";
+  for (auto voltage : supplyVoltages){
+    std::cout << voltage << " ";
+  }
+  std::cout << std::endl;
+
+  auto temperature
+    = d.getScalarRegisterAccessor<float>("heater/temperatureReadback");
+
+  temperature.read();  
+  std::cout << "Readback temperature is " << temperature << std::endl;
+
+}
