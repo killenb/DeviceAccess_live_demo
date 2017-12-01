@@ -23,15 +23,4 @@ int main(){
   temperature.read();  
   std::cout << "Readback temperature is " << temperature << std::endl;
 
-  auto supplyVoltages
-    = d.getOneDRegisterAccessor<int>("heater/supplyVoltages");
-
-  supplyVoltages.read();
-
-  std::cout << "Supply voltages are ";
-  for (auto voltage : supplyVoltages){
-    std::cout << voltage << " ";
-  }
-  std::cout << std::endl;
-
 }
