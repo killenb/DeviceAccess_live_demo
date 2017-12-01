@@ -17,6 +17,12 @@ int main(){
   heatingCurrent += 3;
   heatingCurrent.write();
 
+  auto temperature
+    = d.getScalarRegisterAccessor<float>("heater/temperatureReadback");
+
+  temperature.read();  
+  std::cout << "Readback temperature is " << temperature << std::endl;
+
   auto supplyVoltages
     = d.getOneDRegisterAccessor<int>("heater/supplyVoltages");
 
@@ -27,11 +33,5 @@ int main(){
     std::cout << voltage << " ";
   }
   std::cout << std::endl;
-
-  auto temperature
-    = d.getScalarRegisterAccessor<float>("heater/temperatureReadback");
-
-  temperature.read();  
-  std::cout << "Readback temperature is " << temperature << std::endl;
 
 }

@@ -2,4 +2,4 @@
 
   mtca4u::setDMapFilePath("devices.dmap");
 
-  d.open("heater");
+  d.open("oven");
