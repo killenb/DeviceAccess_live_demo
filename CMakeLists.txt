@@ -10,4 +10,4 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${mtca4u-deviceaccess_CXX_FLAGS}")
 ADD_EXECUTABLE(${PROJECT_NAME} accessHeater.cpp )
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${mtca4u-deviceaccess_LIBRARIES})
 
-file(COPY heater.map devices.dmap DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY oven.map devices.dmap DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

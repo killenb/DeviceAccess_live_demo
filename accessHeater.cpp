@@ -6,7 +6,7 @@ int main(){
 
   mtca4u::setDMapFilePath("devices.dmap");
   mtca4u::Device d;
-  d.open("heater");
+  d.open("oven");
  
   auto heatingCurrent
     = d.getScalarRegisterAccessor<int>("heater/heatingCurrent");
