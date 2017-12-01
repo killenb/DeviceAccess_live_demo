@@ -4,7 +4,7 @@
 int main(){
 
   mtca4u::Device d;
-  d.open("sdm://./pci:mtcadummys1=heater.map");
+  d.open("sdm://./pci:mtcadummys1=oven.map");
  
   auto heatingCurrent
     = d.getScalarRegisterAccessor<int>("heater/heatingCurrent");
