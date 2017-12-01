@@ -1,12 +1,10 @@
 #include <mtca4u/Device.h>
-#include <mtca4u/Utilities.h> // needed for setDMapFilePath
 #include <iostream>
 
 int main(){
 
-  mtca4u::setDMapFilePath("devices.dmap");
   mtca4u::Device d;
-  d.open("oven");
+  d.open("sdm://./pci:mtcadummys1=heater.map");
  
   auto heatingCurrent
     = d.getScalarRegisterAccessor<int>("heater/heatingCurrent");
