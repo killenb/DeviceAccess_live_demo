@@ -1,5 +1,0 @@
-#include <mtca4u/Utilities.h> // needed for setDMapFilePath
-
-  mtca4u::setDMapFilePath("devices.dmap");
-
-  d.open("oven");
