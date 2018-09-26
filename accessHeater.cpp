@@ -4,7 +4,7 @@
 int main(){
 
   ChimeraTK::Device d;
-  d.open("sdm://./pci:mtcadummys1=oven.map");
+  d.open("(sharedMemoryDummy?map=oven.map)");
  
   auto heatingCurrent
     = d.getScalarRegisterAccessor<int>("heater/heatingCurrent");
