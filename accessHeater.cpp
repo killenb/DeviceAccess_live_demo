@@ -3,8 +3,9 @@
 
 int main(){
 
+  ChimeraTK::setDMapFilePath("devices.dmap");
   ChimeraTK::Device d;
-  d.open("(sharedMemoryDummy?map=oven.map)");
+  d.open("oven");
  
   auto heatingCurrent
     = d.getScalarRegisterAccessor<int>("heater/heatingCurrent");
