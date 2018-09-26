@@ -1,11 +1,10 @@
-#include <mtca4u/Device.h>
-#include <mtca4u/Utilities.h> // needed for setDMapFilePath
+#include <ChimeraTK/Device.h>
 #include <iostream>
 
 int main(){
 
-  mtca4u::setDMapFilePath("devices.dmap");
-  mtca4u::Device d;
+  ChimeraTK::setDMapFilePath("devices.dmap");
+  ChimeraTK::Device d;
   d.open("oven");
  
   auto heatingCurrent
@@ -22,16 +21,5 @@ int main(){
 
   temperature.read();  
   std::cout << "Readback temperature is " << temperature << std::endl;
-
-  auto supplyVoltages
-    = d.getOneDRegisterAccessor<int>("heater/supplyVoltages");
-
-  supplyVoltages.read();
-
-  std::cout << "Supply voltages are ";
-  for (auto voltage : supplyVoltages){
-    std::cout << voltage << " ";
-  }
-  std::cout << std::endl;
 
 }
