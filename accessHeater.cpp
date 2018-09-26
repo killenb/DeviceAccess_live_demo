@@ -1,9 +1,9 @@
-#include <mtca4u/Device.h>
+#include <ChimeraTK/Device.h>
 #include <iostream>
 
 int main(){
 
-  mtca4u::Device d;
+  ChimeraTK::Device d;
   d.open("sdm://./pci:mtcadummys1=oven.map");
  
   auto heatingCurrent
