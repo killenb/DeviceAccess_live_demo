@@ -1,3 +1,3 @@
-#alias_name   URI                       map_file
-oven          sdm://./pci:mtcadummys1   oven.map
-#oven         sdm://./dummy=oven.map    oven.map
+#alias_name   device_descriptor
+oven          (sharedMemoryDummy?map=oven.map)
+
